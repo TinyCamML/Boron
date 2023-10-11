@@ -1,27 +1,39 @@
-#include <Particle.h>
+#Code in VS_Code for the Boron to recieve data from the OpenMV Camera
+
+
+SYSTEM_THREAD(ENABLED);
+SYSTEM_MODE(SEMI_AUTOMATIC);
 
 void setup() {
     Serial.begin(9600);
+    Serial1.begin(9600); // Initialize serial communication
 }
 
 void loop() {
-    if (Serial.available()) {
-        String receivedData = Serial.readStringUntil('\n'); //
-        if (receivedData == "Wake up, OpenMV!") {
-            // Send a request for data to the OpenMV
-            Serial.println("Request data from OpenMV");
-        }
+    // Check if there is data available from the OpenMV camera
+    Serial1.println("Testing: 1, 2, 3");
+
+    if (Serial1.available()) {
+    Serial.println("if was true");
+    
+    Serial1.end();
+    delay(1000);
+    Serial1.begin(9600);
+    delay(500);
+
+    String receivedData = Serial1.readStringUntil('Flood'); // Read data until a newline character
+
+    Serial1.end();
+    delay(1000);
+    Serial1.begin(9600);
+    delay(500);
+
+      // Process and use the data received from the OpenMV here
+    Serial.print("Received data from OpenMV: ");
+    Serial.println(receivedData);
     }
-    // Process and use the data received from OpenMV here
-}
+    
+    delay(1000);
+    
 
-
-uart = pyb.UART(3, 9600)
-
-while True:
-    if uart.any():  # Check if data is available on UART
-        received_data = uart.readall()  # Read all available data
-        if received_data == b'Request data from OpenMV\r\n':
-            # Perform data collection and send it back to the Boron
-            data_to_send = setup_data.csv  # Replace with your actual data
-            uart.write(data_to_send)  # Send data back to Boron
+} 
