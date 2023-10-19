@@ -1,4 +1,9 @@
 # Boron
 Boron code to send data from OpenMV -> Cloud
- this is the readme
- 
+
+
+
+
+### Here is the proposed wiring diagram:
+
+<img src="./Images/circuit2.png" width=40% height=40%/>
