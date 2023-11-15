@@ -8,7 +8,7 @@ SystemSleepConfiguration config;
 //const unsigned long MAX_TIME_TO_PUBLISH_MS = 20000; // Only stay awake for this time trying to connect to the cloud and publish
 // const unsigned long TIME_AFTER_PUBLISH_MS = 4000; // After publish, wait 4 seconds for data to go out
 const unsigned long SECONDS_BETWEEN_MEASUREMENTS = 60; // What should sampling period be?
-const unsigned long EARLYBIRD_SECONDS = 1; // how long before desired time should I wake up? Sample currenly takes 10 s, so wake up 10 s early
+const unsigned long EARLYBIRD_SECONDS = 0; // how long before desired time should I wake up? Sample currenly takes 10 s, so wake up 10 s early
 
 
 void setup() {
@@ -18,16 +18,12 @@ void setup() {
 
 void loop() {
 
-        
-         delay(500);
+        Serial1.print("R");
+    
+         delay(1000);
 
         Serial.println(Serial1.readString());
-
-        delay(500);
-
-        Serial1.print("R");
-         
-         delay(500);
+        
 
          config.mode(SystemSleepMode::ULTRA_LOW_POWER)
          .gpio(D2, FALLING)
