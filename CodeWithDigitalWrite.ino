@@ -24,7 +24,7 @@ void loop() {
         digitalWrite(A0, LOW);
 
 
-        Serial1.print("R");
+        //Serial1.print("R");
 
         delay(1000);
 
