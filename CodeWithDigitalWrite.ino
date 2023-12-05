@@ -40,16 +40,16 @@ void loop() {
 
 
 //Ready to sleep
-    //     SystemSleepResult result = System.sleep(config); // Device sleeps here
-    //  }
+         SystemSleepResult result = System.sleep(config); // Device sleeps here
+      }
 
-    //  int secondsUntilNextEvent() {
+      int secondsUntilNextEvent() {
 
-         //int current_seconds = Time.now();
-//          int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - EARLYBIRD_SECONDS; //- (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
+         int current_seconds = Time.now();
+          int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - EARLYBIRD_SECONDS; //- (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
 
-//          Serial.print("Sleeping for ");
-//          Serial.println(seconds_to_sleep);
+          Serial.print("Sleeping for ");
+          Serial.println(seconds_to_sleep);
 
-//          return seconds_to_sleep;
+          return seconds_to_sleep;
 }
