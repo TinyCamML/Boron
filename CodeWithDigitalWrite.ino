@@ -20,36 +20,42 @@ void setup() {
 
 void loop() {
 
-        
         digitalWrite(A0, LOW);
 
+        delay(1000);
 
-        //Serial1.print("R");
+        //Serial.println(Serial1.readString());
+
+        //delay(3000);
+
+        digitalWrite(A0, HIGH);
+
+        digitalWrite(A0, LOW);
 
         delay(1000);
 
         Serial.println(Serial1.readString());
 
+        //delay(3000);
+
         digitalWrite(A0, HIGH);
 
-        delay(3000);
-
          config.mode(SystemSleepMode::ULTRA_LOW_POWER)
-         .gpio(D2, FALLING)
+         .gpio(A0, FALLING)
          .duration(60* 1000L); // Set seconds until wake
 
 
 //Ready to sleep
-         SystemSleepResult result = System.sleep(config); // Device sleeps here
-      }
+        SystemSleepResult result = System.sleep(config); // Device sleeps here
+     //}
 
-      int secondsUntilNextEvent() {
+     //int secondsUntilNextEvent() {
 
          //int current_seconds = Time.now();
-          int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - EARLYBIRD_SECONDS; //- (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
+         //int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - EARLYBIRD_SECONDS; //- (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
 
-          Serial.print("Sleeping for ");
-          Serial.println(seconds_to_sleep);
+         //Serial.print("Sleeping for ");
+         //Serial.println(seconds_to_sleep);
 
-          return seconds_to_sleep;
+         //return seconds_to_sleep;
 }
