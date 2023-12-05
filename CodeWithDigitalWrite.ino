@@ -45,7 +45,7 @@ void loop() {
 
       int secondsUntilNextEvent() {
 
-         int current_seconds = Time.now();
+         //int current_seconds = Time.now();
           int seconds_to_sleep = SECONDS_BETWEEN_MEASUREMENTS - EARLYBIRD_SECONDS; //- (current_seconds % SECONDS_BETWEEN_MEASUREMENTS);
 
           Serial.print("Sleeping for ");
