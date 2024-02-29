@@ -1,5 +1,5 @@
 # Boron
-This repositiory contains python code for the Boron that communicates with the OpenMV. 
+This repositiory contains C++ code for the Boron that communicates with the OpenMV. 
 
 The code contains 4 main sections:
       1. Setup of the Boron
